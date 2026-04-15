@@ -1,0 +1,72 @@
+/* center the logo and raise above overlays */
+.home-logo-container {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* avoid accidental size inheritance */
+  max-width: 100%;
+}
+
+/* keep aspect ratio; scale nicely on phones */
+.home-logo-image {
+  width: clamp(160px, 45vw, 320px); /* responsive width */
+  max-width: 90vw;
+  height: auto;                     /* critical: no fixed height */
+  object-fit: contain;              /* why: never distort on narrow viewports */
+  display: block;
+  /* optional visual crispness on iOS */
+  image-rendering: -webkit-optimize-contrast;
+}
+
+/* very small phones */
+@media (max-width: 480px) {
+  .home-logo-image {
+    width: min(70vw, 260px);
+  }
+}
+
+/* guard: if anything else forces height on images, neutralize here */
+.home-logo-container img {
+  max-height: 70vh;
+}
+
+/* ---------- New: 3D heading emerge animation ---------- */
+
+/* The heading appears as if coming out of the video plane */
+@keyframes emergeFromDepth {
+  0% {
+    transform: translateZ(-200px) scale(0.9);
+    filter: blur(6px);
+    opacity: 0;
+  }
+  60% {
+    transform: translateZ(-40px) scale(1.02);
+    filter: blur(1.5px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateZ(0) scale(1);
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+
+/* Apply to the heading when it should reveal */
+.emerge-3d {
+  will-change: transform, filter, opacity; /* performance hint */
+  transform-style: preserve-3d;
+  animation: emergeFromDepth 600ms ease-out forwards;
+}
+
+/* Reduced-motion users get a gentle fade only */
+@media (prefers-reduced-motion: reduce) {
+  .emerge-3d {
+    animation: fadeInOnly 300ms ease-out forwards;
+  }
+  @keyframes fadeInOnly {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+}
