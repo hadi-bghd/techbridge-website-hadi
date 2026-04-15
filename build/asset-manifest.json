@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/techbridge-website-hadi/static/css/main.278924c2.css",
-    "main.js": "/techbridge-website-hadi/static/js/main.faf34f27.js",
+    "main.js": "/techbridge-website-hadi/static/js/main.10f5f4ae.js",
     "static/js/453.4cc6d15a.chunk.js": "/techbridge-website-hadi/static/js/453.4cc6d15a.chunk.js",
     "static/media/VID-2.mp4": "/techbridge-website-hadi/static/media/VID-2.baa0edfa5123557c9d32.mp4",
     "static/media/VID-1.mp4": "/techbridge-website-hadi/static/media/VID-1.550a9f54d052be982051.mp4",
@@ -10,11 +10,11 @@
     "static/media/LogoNoBG.png": "/techbridge-website-hadi/static/media/LogoNoBG.b678bb0f7e6a1b87daf5.png",
     "index.html": "/techbridge-website-hadi/index.html",
     "main.278924c2.css.map": "/techbridge-website-hadi/static/css/main.278924c2.css.map",
-    "main.faf34f27.js.map": "/techbridge-website-hadi/static/js/main.faf34f27.js.map",
+    "main.10f5f4ae.js.map": "/techbridge-website-hadi/static/js/main.10f5f4ae.js.map",
     "453.4cc6d15a.chunk.js.map": "/techbridge-website-hadi/static/js/453.4cc6d15a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.278924c2.css",
-    "static/js/main.faf34f27.js"
+    "static/js/main.10f5f4ae.js"
   ]
 }
