@@ -1,5 +1,5 @@
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Route,
   Routes,
   useLocation,
@@ -13,7 +13,6 @@ import TechBridgePage from "./Sections/TechBridgePage";
 const AppContent = () => {
   const location = useLocation();
 
-  // Function to handle scrolling with a custom duration
   const scrollTo = (name) => {
     scroller.scrollTo(name, {
       duration: 800,
@@ -24,22 +23,19 @@ const AppContent = () => {
 
   return (
     <>
-      {/* Conditionally render Nav */}
       {location.pathname !== "/recipes" && <Nav />}
 
-      {/* Routes */}
       <Routes>
         <Route path="/" element={<TechBridgePage />} />
         <Route path="/techbridge" element={<TechBridgePage />} />
       </Routes>
-
     </>
   );
 };
 
 const App = () => {
   return (
-    <Router basename="/">
+    <Router>
       <AppContent />
     </Router>
   );
